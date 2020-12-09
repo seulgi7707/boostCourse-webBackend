@@ -52,4 +52,61 @@
     - DCL (Data Control Language) : 데이터를 제어하는 언어입니다.
       - 권한을 관리하고, 테이터의 보안, 무결성 등을 정의합니다.
       - GRANT, REVOKE 등이 여기에 해당합니다.
+     
+     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## mySql 환경설정
+### Database생성하기
+1. __cmd 접속__
+
+2. __MySQL 관리자 계정인 root로 데이터베이스 관리 시스템에 접속__
+    ```
+    mysql -uroot -p
+    ```
+    window 사용자는 설치 시에 입력했던 암호를 입력합니다.
+
+    맥 사용자는 암호가 없으니 그냥 엔터를 입력하면 됩니다.
+
+    MySQL DBMS에 접속하면 “mysql>” 프롬프트가 보입니다.
+    
+3. __Database 생성하기__
+    * 관리자 계정으로 MySQL에 접속했다면, 다음과 같은 명령으로 데이터베이스를 생성합니다.
+     ```
+     mysql> create database DB이름;
+      ```
+    * DB이름을 “connectdb＂로 생성
+     ```
+     mysql> create database connectdb;
+     ```
+    *  __Database 사용자 생성과 권한 주기__
+      -Database를 생성했다면, 해당 데이터베이스를 사용하는 계정을 생성해야 합니다.
+      -또한, 해당 계정이 데이터베이스를 이용할 수 있는 권한을 줘야 합니다.
+      -아래와 같은 명령을 이용해서 사용자 생성과 권한을 줄 수 있습니다.
+      -db이름 뒤의 * 는 모든 권한을 의미한다.
+      -@’%’는 어떤 클라이언트에서든 접근 가능하다는 의미이고, @’localhost’는 해당 컴퓨터에서만 접근 가능하다는 의미입니다.
+      -flush privileges는 DBMS에게 적용을 하라는 의미입니다.
+      -해당 명령을 반드시 실행해줘야 합니다.
+      (ver8.0기준)
+      ```
+         
+      CREATE DATABASE connectdb;
+
+      CREATE USER connectuser@localhost IDENTIFIED BY 'connect123!@#';
+
+      GRANT ALL PRIVILEGES ON connectdb.* TO 'connectuser'@'localhost';
+
+       FLUSH PRIVILEGES:
+      ```
+4. __MySQL 연결끊기__
+  * 프롬프트에서 quit혹은 exit라고 입력
+     ```
+     mysql> QUIT
+     mysql> exit
+     ```
+   Bye라고 나오면 연결 끊기 성공
+   
+      
+
+  
+
           
