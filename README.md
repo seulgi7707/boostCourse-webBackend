@@ -98,12 +98,12 @@
        FLUSH PRIVILEGES:
       ```
 4. __MySQL 연결끊기__
-  * 프롬프트에서 quit혹은 exit라고 입력
-     ```
-     mysql> QUIT
-     mysql> exit
-     ```
-   Bye라고 나오면 연결 끊기 성공
+      * 프롬프트에서 quit혹은 exit라고 입력
+         ```
+         mysql> QUIT
+         mysql> exit
+         ```
+         Bye라고 나오면 연결 끊기 성공
    
       
 
