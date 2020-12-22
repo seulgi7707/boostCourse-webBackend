@@ -97,7 +97,19 @@
 
        FLUSH PRIVILEGES:
       ```
-4. __MySQL 연결끊기__
+4. __생성한 Database에 접속하기__
+      아래와 같이 명령을 실행하여 원하는 데이터베이스엥 접속할 수 있다.
+        ```
+       mysql -h호스트명 -uDB계정명 -p 데이터베이스이름
+       ```
+
+        ```
+       mysql -h호스트명 -uDB계정명 -p 데이터베이스이름
+       mysql -h127.0.0.1 -uconnect -p connectdb [enter]
+       ```
+       https://cphinf.pstatic.net/mooc/20180131_231/1517363293339FNyg8_PNG/2_8_1_Database_.png
+       다음과 같이 프롬프트가 보이면 성공
+5. __MySQL 연결끊기__
       * 프롬프트에서 quit혹은 exit라고 입력
          ```
          mysql> QUIT
@@ -105,7 +117,17 @@
          ```
          Bye라고 나오면 연결 끊기 성공
    
-      
+### MySQL 버전과 현재 날짜 구하기
+
+  ```
+  mysql> SELECT VERSION(), CURRENT_DATE;
+  +-----------+--------------+
+  | VERSION() | CURRENT_DATE |
+  +-----------+--------------+
+  | 5.1.67    | 2013-01-05   |
+  +-----------+--------------+
+  1 row in set (0.00 sec)
+ ```
 
   
 
